@@ -30,29 +30,31 @@ This project open
 <h2>Program walk-through:</h2>
 
 
+
 <p align="center">
-Launch the utility: <br/>
-<img src="https://i.imgur.com/62TgaWL.png" height="80%" width="80%" alt="Splunk Lab"/>
+Nmap the Target Machine:
+  *If RDP port does not show up turn it off on windows machine*<br/>
+<img src="https://github.com/RiqHub/Splunk-Lab/blob/main/Screenshot%202024-08-19%20162519.png" height="80%" width="80%"
 <br />
 <br />
-Select the disk:  <br/>
-<img src="https://i.imgur.com/tcTyMUE.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+For this example we will be using the reverse tcp payload via msfvenom. Use your attack PC's IP for LHOSTS and 4444 as the port. This will be an execution file disguised as a pdf so we will name it Resume.pdf:  <br/>
+<img src="https://github.com/RiqHub/Splunk-Lab/blob/Pictures/Screenshot%202024-08-19%20170616.png" height="80%" width="80%"/>
 <br />
 <br />
-Enter the number of passes: <br/>
-<img src="https://i.imgur.com/nCIbXbg.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+Open metasploit, use the multi/handler. Multi/handler: It's a generic payload handler in Metasploit that listens for incoming connections from payloads that you've deployed on target systems.: <br/>
+<img src="https://github.com/RiqHub/Splunk-Lab/blob/Pictures/splunk%20lab/Screenshot%202024-08-19%20171915.png" height="80%" width="80%" />
 <br />
 <br />
-Confirm your selection:  <br/>
-<img src="https://i.imgur.com/cdFHBiU.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+Set payload to windows reverse shell and Lhost to attack machine IP:  <br/>
+<img src="https://github.com/RiqHub/Splunk-Lab/blob/Pictures/splunk%20lab/Screenshot%202024-08-19%20172034.png" height="80%" width="80%" />
 <br />
 <br />
-Wait for process to complete (may take some time):  <br/>
-<img src="https://i.imgur.com/JL945Ga.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+Open new tab and start a web server via python so the target machine can download the service:(Had to steal a screenshot because i forgot to grab one of this)  <br/>
+<img src="https://github.com/RiqHub/Splunk-Lab/blob/Pictures/Screenshot%202024-08-19%20183501.png" height="80%" width="80%" />
 <br />
 <br />
-Sanitization complete:  <br/>
-<img src="https://i.imgur.com/K71yaM2.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+Switch back to original tab and open a shell:  <br/>
+<img src="https://github.com/RiqHub/Splunk-Lab/blob/Pictures/splunk%20lab/Screenshot%202024-08-19%20173248.png" height="80%" width="80%" />
 <br />
 <br />
 Observe the wiped disk:  <br/>
