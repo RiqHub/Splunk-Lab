@@ -8,13 +8,12 @@ To set up the two machines you need you can use these two videos:
 
 
 <h2>Description</h2>
-This project intendds to show how a SOC analyst would go about identifying malware on 
+This project intends to show how a SOC analyst would go about identifying malware via Splunk.
 <br />
 
 
 <h2>Languages and Utilities Used</h2>
 
-- <b>PowerShell</b> 
 - <b>Splunk</b>
   - [Installation Tutorial](https://www.youtube.com/watch?v=iaBJ-PK8_RI)
 - <b>Metasploit</b>
@@ -32,7 +31,7 @@ This project intendds to show how a SOC analyst would go about identifying malwa
 
 
 <p align="center">
-Nmap the Target Machine:
+In Kali Linux, Nmap the Target Machine:
   *If RDP port does not show up turn it off on windows machine*<br/>
 <img src="https://github.com/RiqHub/Splunk-Lab/blob/main/Screenshot%202024-08-19%20162519.png" height="80%" width="80%"
 <br />
@@ -59,10 +58,6 @@ Switch back to original tab and open a shell:  <br/>
 <br />
 Perform a couple commands in order to get some Telemetry:  <br/>
 <img src="https://github.com/RiqHub/Splunk-Lab/blob/Pictures/splunk%20lab/Screenshot%202024-08-19%20173326.png" height="80%" width="80%" />
-<br />
-<br />
-Switch back to original tab and open a shell:  <br/>
-<img src="https://github.com/RiqHub/Splunk-Lab/blob/Pictures/splunk%20lab/Screenshot%202024-08-19%20173248.png" height="80%" width="80%" />
 <br />
 <br />
 Switch to Windows machine and turn off realtime protection in Windows defender:  <br/>
