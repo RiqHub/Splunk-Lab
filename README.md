@@ -8,7 +8,7 @@ To set up the two machines you need you can use these two videos:
 
 
 <h2>Description</h2>
-This project open
+This project intendds to show how a SOC analyst would go about identifying malware on 
 <br />
 
 
@@ -20,7 +20,7 @@ This project open
 - <b>Metasploit</b>
 - <b>Nmap</b>
 - <b>Sysmon</b>
-  - [Installation Tutorial(https://www.youtube.com/watch?v=uJ7pv6blyog)
+  - [Installation Tutorial](https://www.youtube.com/watch?v=uJ7pv6blyog)
 
 <h2>Environments Used </h2>
 
@@ -57,8 +57,50 @@ Switch back to original tab and open a shell:  <br/>
 <img src="https://github.com/RiqHub/Splunk-Lab/blob/Pictures/splunk%20lab/Screenshot%202024-08-19%20173248.png" height="80%" width="80%" />
 <br />
 <br />
-Observe the wiped disk:  <br/>
-<img src="https://i.imgur.com/AeZkvFQ.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+Perform a couple commands in order to get some Telemetry:  <br/>
+<img src="https://github.com/RiqHub/Splunk-Lab/blob/Pictures/splunk%20lab/Screenshot%202024-08-19%20173326.png" height="80%" width="80%" />
+<br />
+<br />
+Switch back to original tab and open a shell:  <br/>
+<img src="https://github.com/RiqHub/Splunk-Lab/blob/Pictures/splunk%20lab/Screenshot%202024-08-19%20173248.png" height="80%" width="80%" />
+<br />
+<br />
+Switch to Windows machine and turn off realtime protection in Windows defender:  <br/>
+<img src="https://github.com/RiqHub/Splunk-Lab/blob/Pictures/Screenshot%202024-08-19%20172611.png" height="80%" width="80%" />
+<br />
+<br />
+Open a web browser and go to the attackers web directory and download and run the Resume file:  <br/>
+<img src="https://github.com/RiqHub/Splunk-Lab/blob/Pictures/Screenshot%202024-08-19%20172725.png" height="80%" width="80%" />
+<br />
+<br />
+Follow the file path below and delete the input file and insert the input file in this respitory. This will aloow you to get the sysmon features in the index:  <br/>
+<img src="https://github.com/RiqHub/Splunk-Lab/blob/Pictures/splunk%20lab/Screenshot%202024-08-19%20173435.png" height="80%" width="80%" />
+<br />
+<br />
+Open services and restart the splunkd service:  <br/>
+<img src="https://github.com/RiqHub/Splunk-Lab/blob/Pictures/splunk%20lab/Screenshot%202024-08-19%20173612.png" height="80%" width="80%" />
+<br />
+<br />
+Login to Splunk and got to settings > search reports and alerts:  <br/>
+<img src="https://github.com/RiqHub/Splunk-Lab/blob/Pictures/splunk%20lab/Screenshot%202024-08-19%20180801.png" height="80%" width="80%" />
+<br />
+<br />
+Create a new index named endpoint:  <br/>
+<img src="https://github.com/RiqHub/Splunk-Lab/blob/Pictures/splunk%20lab/Screenshot%202024-08-19%20181014.png" height="80%" width="80%" />
+<br />
+<br />
+Under apps we will search sysmon and install "Splunk add on for Sysmon":  <br/>
+<img src="https://github.com/RiqHub/Splunk-Lab/blob/Pictures/splunk%20lab/Screenshot%202024-08-19%20181120.png" height="80%" width="80%" />
+<br />
+<br />
+Go backto Search and reporting and search "index=endpoint Resume.pdf.exe. Expand the first event, scroll down to process_guid, copy the value, remove resume.pdf and add it to the search:  <br/>
+<img src="https://github.com/RiqHub/Splunk-Lab/blob/Pictures/splunk%20lab/Screenshot%202024-08-19%20181506.png" height="80%" width="80%" />
+<br />
+<br />
+Refine the search using a pipe and "table". Use the search provided below and you will be able to see the commands you used when you opened the shell:  <br/>
+<img src="https://github.com/RiqHub/Splunk-Lab/blob/Pictures/splunk%20lab/Screenshot%202024-08-19%20181537.png" height="80%" width="80%" />
+<br />
+<br />
 </p>
 
 <!--
